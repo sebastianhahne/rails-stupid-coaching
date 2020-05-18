@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stupid Coaching</title>
+</head>
+<body>
+  <h1>Stupid Coaching</h1>
+  <h2>
+    <%= params[:question] %>
+  </h2>
+  <p><em>-You</em></p>
+  <% if params[:question] == "I am going to work right now!" %>
+      <h2><%= @answer1 %></h2>
+  <% elsif params[:question].include?("?") %>
+    <h2><%= @answer2 %></h2>
+  <% else  %>
+    <h2><%= @answer3 %></h2>
+  <% end %>
+  <p><em>-Coach</em></p>
+
+  <%= link_to "Ask a new question", ask_path %>
+</body>
+</html>
+
+

@@ -1,0 +1,18 @@
+
+<h1>
+  <%= params[:question] %>
+</h1>
+<h4>-You</h4>
+
+
+<% if params[:question] == "I am going to work right now!" %>
+    <h1><%= @answer1 %></h1>
+<% elsif params[:question].include?("?") %>
+  <h1><%= @answer2 %></h1>
+<% else  %>
+  <h1><%= @answer3 %></h1>
+<% end %>
+<h4>-Coach</h4>
+
+<%= link_to "Ask a new question", ask_path %>
+
